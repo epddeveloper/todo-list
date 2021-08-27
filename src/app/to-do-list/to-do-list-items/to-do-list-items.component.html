@@ -1,0 +1,21 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of toDoItems; let i = index">
+        {{ toDoItems[i] }}
+        <mat-action-list>
+            <button mat-list-item (click)="acceptItem(i)">
+                <mat-icon svgIcon="accept" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </button>
+            <button mat-list-item (click)="editItem(i)">
+                <mat-icon svgIcon="edit" color="primary" aria-hidden="false" aria-label="Example home icon">home
+                </mat-icon>
+            </button>
+            <button mat-list-item (click)="cancelItem(i)">
+                <mat-icon svgIcon="cancel" color="warn" aria-hidden="false" aria-label="Example home icon">home
+                </mat-icon>
+            </button>
+        </mat-action-list>
+    </mat-list-item>
+</mat-list>
+<div class="to-do-list-clear-items__container">
+    <button mat-stroked-button color="warn" (click)="clearItems()">Clear items</button>
+</div>

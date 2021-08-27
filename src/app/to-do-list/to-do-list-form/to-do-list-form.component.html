@@ -1,0 +1,7 @@
+<form class="to-do-list__form" [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name...</mat-label>
+    <input matInput placeholder="Ex. Do 100 JS projects" id="toDoItem" formControlName="toDoItem">
+    <button mat-stroked-button color="primary" class="to-do-list__button--green">Add item</button>
+  </mat-form-field>
+</form>

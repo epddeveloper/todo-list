@@ -1,0 +1,14 @@
+::ng-deep {
+    .mat-list-base.mat-action-list {
+        display: flex;
+    }
+    .mat-icon {
+        color: rgb(63, 192, 63);
+    }
+}
+
+.to-do-list-clear-items__container {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+}
