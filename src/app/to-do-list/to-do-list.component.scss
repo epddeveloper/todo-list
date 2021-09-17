@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 
   ::ng-deep{
@@ -13,6 +14,7 @@
   .to-do-list__header{
     text-align: center;
     width: 100%;
+    font-weight: 600;
   }
 
   .to-do-list__button--green {

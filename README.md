@@ -1,7 +1,4 @@
 # TodoList
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -25,3 +22,25 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+To Do:
+- debug in ng lint
+-add login i register component and in menu
+-create backend
+- add validation in form
+- add login and register user
+- fix edition
+-fix acceptation  -disable buttons blovk if accepted and change colour
+-exercise postman
+
+-write tests
+-learn ngrx
+-chenge colors from scss files to color variables file
+
+
+
+Login to h2 database:
+spring.datasource.username=ela
+spring.datasource.password=tododb123

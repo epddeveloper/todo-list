@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
+import { ToDoItem } from './models/to-do-item.model';
 
 @Component({
   selector: 'app-to-do-list',
@@ -10,20 +11,17 @@ export class ToDoListComponent implements OnInit {
 
   constructor() { }
   title: string = 'To Do List';
-  newItem:string;
-  
-
+  newItemName: string;
 
   ngOnInit() {
 
   }
 
-  addItem(newItem: string):void {
-    // console.log(newItem);
-    this.newItem = newItem;
+  addItem(newItemName: string): void {
+    this.newItemName =newItemName;
   }
 
-  editItem(itemIndex:number){
+  editItem(itemIndex: number) {
     return itemIndex;
   }
 

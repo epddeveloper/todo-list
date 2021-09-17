@@ -1,7 +1,9 @@
 <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let item of toDoItems; let i = index">
-        {{ toDoItems[i] }}
-        <mat-action-list>
+    <mat-list-item role="listitem" *ngFor="let item of toDoItems; let i = index" [ngClass]="{'to-do-list-items__item--accepted':item.is_accepted}">
+        <div>
+            {{ toDoItems[i].item_name }}
+        </div>
+        <mat-action-list *ngIf="!item.is_accepted">
             <button mat-list-item (click)="acceptItem(i)">
                 <mat-icon svgIcon="accept" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
             </button>
@@ -14,8 +16,11 @@
                 </mat-icon>
             </button>
         </mat-action-list>
+        <div *ngIf="item.is_accepted" class="to-do-list-items__accepted">
+            ACCEPTED
+        </div>
     </mat-list-item>
 </mat-list>
-<div class="to-do-list-clear-items__container">
-    <button mat-stroked-button color="warn" (click)="clearItems()">Clear items</button>
+<div class="to-do-list-items__clear-items">
+    <button mat-stroked-button color="warn" *ngIf="toDoItems.length" (click)="clearItems()">Clear items</button>
 </div>

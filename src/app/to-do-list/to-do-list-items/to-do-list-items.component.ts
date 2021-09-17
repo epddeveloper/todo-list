@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ToDoItem } from '../models/to-do-item.model';
 
 const ACCEPT_ICON = `
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -193,35 +194,40 @@ const CANCEL_ICON = `
 })
 export class ToDoListItemsComponent implements OnInit {
 
-  @Input() newListItem: string;
+  @Input() newListItemName: ToDoItem;
   @Output() editedItemIndex = new EventEmitter();
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral('accept', sanitizer.bypassSecurityTrustHtml(ACCEPT_ICON));
     iconRegistry.addSvgIconLiteral('edit', sanitizer.bypassSecurityTrustHtml(EDIT_ICON));
     iconRegistry.addSvgIconLiteral('cancel', sanitizer.bypassSecurityTrustHtml(CANCEL_ICON));
-
-
   }
 
   ngOnInit() {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.newListItem.currentValue) {
-      this.toDoItems.push(changes.newListItem.currentValue);
+    console.log(changes.newListItemName.currentValue);
+
+    if (changes.newListItemName.currentValue) {
+      this.toDoItems.push({
+        'item_name': changes.newListItemName.currentValue,
+        'is_accepted':false
+      });
     }
   }
 
-  toDoItems: Array<string> = [
-    'Learn NodeJS',
-    'Learn React JS',
-    'Learn GraphQl'
+
+
+  toDoItems: Array<ToDoItem> = [
+    {item_name:'Learn NodeJS','is_accepted':false},
+    {item_name:'Learn React JS','is_accepted':false},
+    {item_name:'Learn GraphQl','is_accepted':false}
   ]
 
   acceptItem(i): void {
-    console.log('accpted');
-    // item done 
+    this.toDoItems[i].is_accepted = true;
+    console.log(this.toDoItems[i]);
     // remove or disable all icons
   }
 
