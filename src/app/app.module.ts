@@ -13,6 +13,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ToDoListFormComponent } from './to-do-list/to-do-list-form/to-do-list-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ToDoListFormComponent } from './to-do-list/to-do-list-form/to-do-list-f
     AppComponent,
     ToDoListComponent,
     ToDoListItemsComponent,
-    ToDoListFormComponent
+    ToDoListFormComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -27,12 +27,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 To Do:
 - debug in ng lint
--add login i register component and in menu
+-add login i register component and in menu, add components to routing and to menu, add bootstrap
 -create backend
 - add validation in form
-- add login and register user
 - fix edition
--fix acceptation  -disable buttons blovk if accepted and change colour
 -exercise postman
 
 -write tests
