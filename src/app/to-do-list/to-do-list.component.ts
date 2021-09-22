@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
-import { ToDoItem } from './models/to-do-item.model';
+import { ToDoItem } from '../models/to-do-item.model';
 
 @Component({
   selector: 'app-to-do-list',

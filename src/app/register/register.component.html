@@ -1,1 +1,15 @@
-<p>register works!</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <h1>Register</h1>
+        </div>
+
+        <!-- register Form -->
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <input type="text" formControlName="register_user" class="fadeIn second" placeholder="register *">
+            <input type="text" formControlName="password" class="fadeIn third" placeholder="password *">
+            <input type="text" formControlName="confirm_password" class="fadeIn third" placeholder="confirm password *">
+            <input type="submit" class="fadeIn fourth" value="Register" [disabled]="registerForm.controls['register_user'].invalid || registerForm.controls['password'].invalid || registerForm.controls['confirm_password'].invalid">
+        </form>
+    </div>
+</div>

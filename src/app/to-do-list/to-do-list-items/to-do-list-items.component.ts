@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ToDoItem } from '../models/to-do-item.model';
+import { ToDoItem } from '../../models/to-do-item.model';
 
 const ACCEPT_ICON = `
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

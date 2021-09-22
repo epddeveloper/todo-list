@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ToDoListFormComponent } from './to-do-list/to-do-list-form/to-do-list-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,7 @@ export class ToDoListFormComponent implements OnInit {
     console.log(changes.editingItemNumber.currentValue)
   }
 
-  onSubmit() {
+  onSubmit():void {
     this.addedItem.emit(this.toDoForm.get('toDoItem').value);
   }
 

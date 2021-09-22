@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <h1>Log In</h1>
+        </div>
+
+        <!-- Log In Form -->
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <input type="text" class="fadeIn second" formControlName="login" placeholder="login *">
+            <div *ngIf="loginForm.controls['login'].invalid && (loginForm.controls['login'].dirty || loginForm.controls['login'].touched)"
+                class="alert">
+                <mat-error *ngIf="loginForm.controls['login'].errors.required">Please enter username</mat-error>
+            </div>
+            <input type="text" class="fadeIn third" formControlName="password" placeholder="password *">
+            <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+                class="alert">
+                <mat-error *ngIf="loginForm.controls['password'].errors.required">
+                    Please enter password
+                </mat-error>
+            </div>
+            <input [disabled]="loginForm.controls['password'].invalid || loginForm.controls['login'].invalid" type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+    </div>
+</div>

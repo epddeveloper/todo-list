@@ -24,18 +24,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+frontend login and register components, add user model,user service, validation alerts
 
 To Do:
-- debug in ng lint
--add login i register component and in menu, add components to routing and to menu, add bootstrap
--create backend
-- add validation in form
 - fix edition
+-chenge colors from scss files to color variables file
+- debug in ng lint
+-create backend
+
 -exercise postman
 
 -write tests
 -learn ngrx
--chenge colors from scss files to color variables file
+
 
 
 
