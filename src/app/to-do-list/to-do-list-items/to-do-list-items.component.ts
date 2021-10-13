@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ListService } from 'src/app/services/list.service';
 import { ToDoItem } from '../../models/to-do-item.model';
 
 const ACCEPT_ICON = `
@@ -194,48 +195,50 @@ const CANCEL_ICON = `
 })
 export class ToDoListItemsComponent implements OnInit {
 
+  toDoItems: Array<ToDoItem>;
   @Input() newListItemName: ToDoItem;
-  @Output() editedItemIndex = new EventEmitter();
+  @Input() patchItem: any;
+  // editedItemIndex:number;
+  // @Output() editedItemIndex = new EventEmitter();
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private listService: ListService) {
     iconRegistry.addSvgIconLiteral('accept', sanitizer.bypassSecurityTrustHtml(ACCEPT_ICON));
     iconRegistry.addSvgIconLiteral('edit', sanitizer.bypassSecurityTrustHtml(EDIT_ICON));
     iconRegistry.addSvgIconLiteral('cancel', sanitizer.bypassSecurityTrustHtml(CANCEL_ICON));
   }
 
   ngOnInit() {
+    this.listService.getList().subscribe((data: Array<ToDoItem>) => {
+      this.toDoItems = data;
+    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.newListItemName.currentValue);
-
-    if (changes.newListItemName.currentValue) {
+    if (changes.newListItemName && changes.newListItemName.currentValue) {
+      console.log('method add??');
       this.toDoItems.push({
         'item_name': changes.newListItemName.currentValue,
-        'is_accepted':false
+        'is_accepted': false
       });
     }
+
+    if(changes.patchItem && changes.patchItem.currentValue){
+      console.log(changes);
+      console.log(this.toDoItems);
+      this.editItem(1,'test');
+    }
+
   }
 
-
-
-  toDoItems: Array<ToDoItem> = [
-    {item_name:'Learn NodeJS','is_accepted':false},
-    {item_name:'Learn React JS','is_accepted':false},
-    {item_name:'Learn GraphQl','is_accepted':false}
-  ]
-
-  acceptItem(i): void {
+  acceptItem(i: number): void {
     this.toDoItems[i].is_accepted = true;
-    console.log(this.toDoItems[i]);
-    // remove or disable all icons
   }
 
-  editItem(i): void {
-    this.editedItemIndex.emit(i);
+  editItem(i: number,newName:string): void {
+    this.listService.editItem(i,newName);
   }
 
-  cancelItem(i): void {
+  cancelItem(i: number): void {
     this.toDoItems.splice(i, 1);
   }
 

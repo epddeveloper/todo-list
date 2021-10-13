@@ -11,8 +11,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser() {
-    this.http.get<any>('../assets/config.json').subscribe(data => {
+  getUser():void {
+    this.http.get<any>('../../assets/config.json').subscribe(data => {
       console.log(data);
     })
   }

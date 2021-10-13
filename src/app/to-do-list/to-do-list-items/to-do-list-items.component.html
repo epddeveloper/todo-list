@@ -1,5 +1,6 @@
 <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let item of toDoItems; let i = index" [ngClass]="{'to-do-list-items__item--accepted':item.is_accepted}">
+    <mat-list-item role="listitem" *ngFor="let item of toDoItems; let i = index"
+        [ngClass]="{'to-do-list-items__item--accepted':item.is_accepted}">
         <div>
             {{ toDoItems[i].item_name }}
         </div>
@@ -7,10 +8,15 @@
             <button mat-list-item (click)="acceptItem(i)">
                 <mat-icon svgIcon="accept" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
             </button>
-            <button mat-list-item (click)="editItem(i)">
-                <mat-icon svgIcon="edit" color="primary" aria-hidden="false" aria-label="Example home icon">home
+            <!-- <button mat-list-item (click)="editItem(i)">
+                <mat-icon svgIcon="edit" color="primary" aria-hidden="false" aria-label="Example home icon">
+                </mat-icon>
+            </button> -->
+            <button routerLink="/edit-item/{{i}}">
+                <mat-icon svgIcon="edit" color="primary" aria-hidden="false" aria-label="Example home icon">
                 </mat-icon>
             </button>
+
             <button mat-list-item (click)="cancelItem(i)">
                 <mat-icon svgIcon="cancel" color="warn" aria-hidden="false" aria-label="Example home icon">home
                 </mat-icon>
@@ -22,5 +28,5 @@
     </mat-list-item>
 </mat-list>
 <div class="to-do-list-items__clear-items">
-    <button mat-stroked-button color="warn" *ngIf="toDoItems.length" (click)="clearItems()">Clear items</button>
+    <button mat-stroked-button color="warn" *ngIf="toDoItems && toDoItems.length" (click)="clearItems()">Clear items</button>
 </div>

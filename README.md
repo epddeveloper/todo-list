@@ -24,7 +24,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-frontend login and register components, add user model,user service, validation alerts
+style toDo component template, add item edition, add list service
 
 To Do:
 - fix edition
@@ -43,3 +43,19 @@ To Do:
 Login to h2 database:
 spring.datasource.username=ela
 spring.datasource.password=tododb123
+
+
+
+pyhton:
+1.run virtual env: 
+    .\.env\Scripts\activate
+
+2.go to todolist folder on started environment and 3
+
+3.run srver: python manage.py runserver
+
+4. load data form fixtures to database
+python manage.py loaddata todolist/fixtures/initial_data.json
+
+5. migrations: python manage.py migrate,
+manage.py makemigrations

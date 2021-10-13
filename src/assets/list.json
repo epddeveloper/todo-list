@@ -1,0 +1,14 @@
+[
+    {
+        "item_name": "Learn NodeJS",
+        "is_accepted": false
+    },
+    {
+        "item_name": "Learn React JS",
+        "is_accepted": false
+    },
+    {
+        "item_name": "Learn GraphQl",
+        "is_accepted": false
+    }
+]

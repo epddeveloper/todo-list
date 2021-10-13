@@ -1,7 +1,11 @@
+<h2 *ngIf="isAddMode" class="to-do-list__h2">Add Task ToDo</h2>
+<h2 *ngIf="!isAddMode" class="to-do-list__h2">Edit Task ToDo</h2>
+{{id}}
 <form class="to-do-list__form" [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="outline">
     <mat-label>Name...</mat-label>
     <input matInput placeholder="Ex. Do 100 JS projects" id="toDoItem" formControlName="toDoItem">
-    <button mat-stroked-button color="primary" class="to-do-list__button--green">Add item</button>
   </mat-form-field>
+  <button *ngIf="isAddMode" mat-raised-button color="primary" class="to-do-list__button--primary">Add item</button>
+  <button *ngIf="!isAddMode" mat-raised-button color="primary" class="to-do-list__button--primary">Edit item</button>
 </form>

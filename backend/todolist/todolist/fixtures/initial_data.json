@@ -1,0 +1,66 @@
+[
+   {
+      "model":"todolist.user",
+      "pk":1,
+      "fields":{
+         "name":"elaela",
+         "password":"testela123"
+      }
+   },
+   {
+      "model":"todolist.user",
+      "pk":2,
+      "fields":{
+         "name":"ulaula",
+         "password":"testula123"
+      }
+   },
+   {
+      "model":"todolist.user",
+      "pk":3,
+      "fields":{
+         "name":"alaala",
+         "password":"testala123"
+      }
+   },
+   {
+      "model":"todolist.todoitem",
+      "pk":1,
+      "fields":{
+        "item_name": "Learn NodeJS",
+        "is_accepted": false
+      }
+   },
+   {
+      "model":"todolist.todoitem",
+      "pk":2,
+      "fields":{
+        "item_name": "Learn React JS",
+        "is_accepted": false
+      }
+   },
+   {
+      "model":"todolist.todoitem",
+      "pk":3,
+      "fields":{
+        "item_name": "Learn GraphQl",
+        "is_accepted": false
+      }
+   },
+   {
+      "model":"todolist.todoitem",
+      "pk":4,
+      "fields":{
+        "item_name": "Learn HTML",
+        "is_accepted": false
+      }
+   },
+   {
+      "model":"todolist.todoitem",
+      "pk":5,
+      "fields":{
+        "item_name": "Learn CSS",
+        "is_accepted": false
+      }
+   }
+]

@@ -2,11 +2,13 @@
 <br />
 <br />
 <br />
-<app-to-do-list-form (addedItem)="addItem($event)" editingItemNumber='editItem'></app-to-do-list-form>
+<app-to-do-list-form (addedItem)="addItem($event)" (editedItem)="patchItem($event)" editingItemNumber='editItem'>
+</app-to-do-list-form>
 <br />
 <br />
 <br />
 <br />
 <br />
 <br />
-<app-to-do-list-items newListItemName="{{newItemName}}" (editedItemIndex)="editItem($event)"></app-to-do-list-items>
+<app-to-do-list-items newListItemName="{{newItemName}}" (editedItemIndex)="editItem($event)"
+    patchItem="{{editedItemToPatch}}"></app-to-do-list-items>

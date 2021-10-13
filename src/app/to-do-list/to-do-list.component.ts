@@ -12,16 +12,25 @@ export class ToDoListComponent implements OnInit {
   constructor() { }
   title: string = 'To Do List';
   newItemName: string;
+  editedItemToPatch: any;
 
   ngOnInit() {
 
   }
 
-  addItem(newItemName: string): void {
-    this.newItemName =newItemName;
+  addItem(newItemName: string) {
+    console.log(newItemName);
+    return this.newItemName = newItemName;
+
+  }
+
+  patchItem(editedItemToPatch: string) {
+    console.log(editedItemToPatch);
+    return this.editedItemToPatch = editedItemToPatch;
   }
 
   editItem(itemIndex: number) {
+    console.log(itemIndex);
     return itemIndex;
   }
 
