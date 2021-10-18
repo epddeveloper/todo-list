@@ -208,34 +208,40 @@ export class ToDoListItemsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listService.getList().subscribe((data: Array<ToDoItem>) => {
-      this.toDoItems = data;
-    });
+    this.getList();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.newListItemName && changes.newListItemName.currentValue) {
-      console.log('method add??');
-      this.toDoItems.push({
+      this.listService.addItem({
         'item_name': changes.newListItemName.currentValue,
         'is_accepted': false
+      }).subscribe(data => {
+        console.log(data);
+        this.getList();
       });
     }
 
-    if(changes.patchItem && changes.patchItem.currentValue){
+    if (changes.patchItem && changes.patchItem.currentValue) {
       console.log(changes);
       console.log(this.toDoItems);
-      this.editItem(1,'test');
+      this.editItem(1, 'test');
     }
 
+  }
+
+  getList() {
+    this.listService.getList().subscribe((data: Array<ToDoItem>) => {
+      this.toDoItems = data;
+    });
   }
 
   acceptItem(i: number): void {
     this.toDoItems[i].is_accepted = true;
   }
 
-  editItem(i: number,newName:string): void {
-    this.listService.editItem(i,newName);
+  editItem(i: number, newName: string): void {
+    this.listService.editItem(i, newName);
   }
 
   cancelItem(i: number): void {
@@ -243,7 +249,10 @@ export class ToDoListItemsComponent implements OnInit {
   }
 
   clearItems() {
-    this.toDoItems = []
+    // this.toDoItems = []
+    this.listService.deleteAllItems().subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

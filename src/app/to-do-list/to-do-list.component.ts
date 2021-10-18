@@ -18,18 +18,16 @@ export class ToDoListComponent implements OnInit {
 
   }
 
-  addItem(newItemName: string) {
-    console.log(newItemName);
+  addItem(newItemName: string):any {
     return this.newItemName = newItemName;
-
   }
 
-  patchItem(editedItemToPatch: string) {
+  patchItem(editedItemToPatch: string):any {
     console.log(editedItemToPatch);
     return this.editedItemToPatch = editedItemToPatch;
   }
 
-  editItem(itemIndex: number) {
+  editItem(itemIndex: number):any {
     console.log(itemIndex);
     return itemIndex;
   }

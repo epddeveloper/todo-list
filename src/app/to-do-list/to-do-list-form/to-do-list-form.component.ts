@@ -44,10 +44,7 @@ export class ToDoListFormComponent implements OnInit {
             toDoItem: this.toDoItems[this.id].item_name
           });
         }
-
       });
-
-
     })
 
     this.toDoForm = this.formBuilder.group({
@@ -65,7 +62,6 @@ export class ToDoListFormComponent implements OnInit {
     } else {
       this.editedItem.emit({ 'id': this.id, 'name': this.toDoForm.get('toDoItem').value });
     }
-
   }
 
 }

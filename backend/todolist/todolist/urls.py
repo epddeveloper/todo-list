@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^user/$', views.UserView.as_view(), name='user-list'),
     url(r'^to-do-items/$', views.ItemsView.as_view(), name='item-list'),
+    # url(r'^delete/to-do-items/$', views.DeleteItemsView.as_view(), name='cleared-item-list'),
 ]

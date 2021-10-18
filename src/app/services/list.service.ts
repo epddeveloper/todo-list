@@ -10,23 +10,27 @@ export class ListService {
 
   constructor(private http: HttpClient) { }
 
-  //add type, not any
-  getList() {
+  getList(): any {
     // return this.http.get('../../assets/list.json');
-    return this.http.get(`$dataPath/o-do-items`);
+    return this.http.get(this.dataPath + "/to-do-items");
   }
 
-  addItem() {
-      //post to url
+  addItem(params: any): any {
+    return this.http.post(this.dataPath + "/to-do-items/", params);
   }
 
-  editItem(i: number,newName:string) {
+  editItem(i: number, newName: string): any {
     console.log('you are ins ervice method');
     //patch to url
   }
 
-  deleteItem(index: number) {
+  deleteItem(index: number): any {
     //delete method to url
+  }
+
+  deleteAllItems(): any {
+    console.log('aaa');
+    return this.http.delete(this.dataPath + "/to-do-items");
   }
 
 }
